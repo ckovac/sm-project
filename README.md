@@ -24,3 +24,13 @@ Please run the following commands at the root of the project to create your test
 * ensure the Create/Modify Surveys, View Webhooks and Create/Modify Webhooks scopes are available for your app
 * manually complete the "test webhook fires" survey and confirm that the webhook fires by checking requestb.in
    
+IMPORTANT: manually clear out the webhooks between runs.
+           There appears to be a bug when creating a webhook. If there are multiple surveys with the same name
+           then creating a webhook returns an error (because the survey names are not unique?) 
+           Also, deleting a survey does not clear the associated webhooks (by design?).
+    
+TODO: automate survey response and compare the webhook data with the event data
+
+Please run the following command from the project root folder to run the tests:
+
+    pytest
